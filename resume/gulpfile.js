@@ -18,7 +18,7 @@ var project = require('./project.json'),
 
 
 gulp.task("build", function () {
-    gulp.src('wwwroot/lib/*').pipe(clean());
+    
     bower();
     gulp.src(['src/TypeScript/Tastes.js', 'src/TypeScript/Food.js'])
                 .pipe(concat("combined.js"))
@@ -35,7 +35,6 @@ gulp.task('resume', function () {
 });
 
 gulp.task('sass', function () {
-    gulp.src(project.webroot + '/css/*').pipe(clean());
     gulp.src('src/SCSS/resume.scss')
         .pipe(sass())
         .pipe(gulp.dest(project.webroot + '/css'));
@@ -45,4 +44,9 @@ gulp.task("watcher", function () {
     gulp.watch("src/TypeScript/*.js", ['build']);
     gulp.watch("src/SCSS/*.scss", ['sass']);
     gulp.watch("src/*.html", ['resume']);
+});
+
+gulp.task("cleanAll", function () {
+    gulp.src('wwwroot/lib/*').pipe(clean());
+    gulp.src(project.webroot + '/css/*').pipe(clean());
 });

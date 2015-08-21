@@ -1,6 +1,24 @@
-﻿body {
-    background-color: #757575;
-    color: #222;
+﻿$lightText:#444;
+$darkText:#222;
+$backgroundColor:#757575;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+         -moz-border-radius: $radius;
+          -ms-border-radius: $radius;
+                  border-radius: $radius;
+}
+
+.darktext {
+    color:$darkText;
+}
+.lighttext {
+    color:$lightText;
+}
+
+body {
+    @extend .lighttext;
+    background-color: $backgroundColor;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -8,11 +26,37 @@
     padding-top: 20px;
 }
 
+h1 {
+    @extend .darktext;
+}
+
+h2 {
+    @extend .darktext;
+}
+
+h3 {
+    @extend .darktext;
+}
+
+h4 {
+    @extend .darktext;
+}
+
+h5 {
+    @extend .darktext;
+}
+
 .container {
     background-color: #FFFFFF;
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.30), 0 0 40px rgba(0, 0, 0, 0.10) inset;
-    -ms-border-radius: 4px;
+    @include border-radius(4px);
+    
     border-radius: 4px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.tag-line {
+    color: $darkText;
+    font-size:1.1em;
+    font-weight: 700;
 }
