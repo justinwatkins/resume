@@ -1,11 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/resume.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -14,59 +13,148 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="lib/modernizr/modernizr.js"></script>
     <title>Justin Watkins Resume</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center">Justin Watkins</h1>
-        <div class="text-center">1517 Patterson Ave / North Aurora, IL 60542 / 708.256.0152</div>
-        <div class="text-center">justin@justin-watkins.com</div>
-        <hr />
-        <h2 class="text-center">Enterprise / Software Architect</h2>
-        <ul class="list-unstyled">
-            <li><strong class="tag-line">Leader in all phases of the SDLC</strong> 15 years of experience working with all aspects of software development focusing on maintaining the balance between quality, maintainability and productivity.</li>
-            <li><strong class="tag-line">Skilled problem solver</strong> Finds viable solutions that align with the business need and problem</li>
-        </ul>
-        <section>
-            <h3 class="text-center">Professional Experience</h3>
-            <p>
-                Career Education Corporation - Schaumburgh, IL <br />
-                <strong>Enterprise Architect</strong> 2008 to Present<br />
-                <strong>Software Development Manager</strong>2005 to 2008 <br />
-                <strong>Software Developer</strong>2003 to 2005 <br />
-            </p>
-            <h5>Accomplishments</h5>
-            <ul>
-                <li>Defined strategy and road map to consolidate duplicate technology components created in complex ecosystem</li>
-                <li>Lead large transformation teams to migrate technology platforms</li>
-                <li>Accomplishment 1</li>
-                <li>Accomplishment 1</li>
+    <div class="container h-resume hResume">
+        <section class="p-contact h-card vcard">
+            <h1 class="p-name fn text-center">Justin Watkins</h1>
+            <div class="text-center addr">
+                <span class="p-street-address street-address">1517 Patterson Ave</span> / 
+                <span class="p-locality locality">North Aurora</span>, 
+                <span class="p-region region">IL</span> 
+                <span class="p-postal-code postal-code">60542</span> / 
+                <span class="p-tel tel">708.256.0152</span>
+                <div class="p-email email text-center">justin@justin-watkins.com</div>
+            </div>
+        </section>
+        <section class="p-summary">
+            <h2 class="p-name text-center">Enterprise / Software Architect</h2>
+            <ul class="list-unstyled">
+                <li>
+                    A <strong>leader</strong> in all phases of the development lifecycle with over 15 years of focusing on maintaining the balance between quality, maintainability and productivity.
+                </li>
+                <li>
+                    A skilled <strong>problem solver</strong> with deep and broad technical capabilities to identify and resolve issues across the entire technology stack.
+                </li>
+                <li>
+                    A capable <strong>technology champion</strong> who can document and distribute technical problems and solutions to any level of the organization to increase awareness and obtain support.
+                </li>
             </ul>
-            <p>
-
-            </p>
-            <p>
-                Learning Insights - Chicago, IL <br />
-                <strong>Developer/Data Center Operations/System & Network Administrator</strong> 1998 to 2003<br />
-            </p>
+        </section>
+        
+        <section class="p-experience">
+            <h3 class="text-center">Professional Experience</h3>
+            <div>
+                <h4 class="h-card vcard">
+                    <span class="p-name fn">Career Education Corporation</span> 
+                    <small class="p-region region">Schaumburgh, IL</small>
+                    <small>(2004 - Present)</small>
+                </h4>
+                <div class="h-event">
+                    <h5>
+                        <span class="p-name">Enterprise Architect</span> 
+                        <small class="p-duration">(2008 to Present)</small>
+                    </h5>
+                    <h6>Accomplishments</h6>
+                    <ul>
+                        <li class="p-description">Defined strategy and road map to consolidate duplicate technical components and communication channels across a portfolio of over one hundred applications</li>
+                        <li class="p-description">Led large teams to complete transformation projects in accordance with the strategy</li>
+                        <li class="p-description">Defined federated single sign on strategy, platform and developed several standard components for consumption</li>
+                        <li class="p-description">Developed responsive views of core learning management platform</li>
+                        <li class="p-description">Led technical transition of an acquisition (everblue)</li>
+                        <li class="p-description">Defined strategy implemented Aspect Oriented Programming techniques to standardize and minimize effort of dealing with cross cutting concerns of error handling, logging and caching</li>
+                    </ul>
+                </div>
+                <div class="h-event">
+                    <h5>
+                        <span class="p-name">Software Development Manager</span>
+                        <small class="p-duration">(2005 to 2008)</small>
+                    </h5>
+                    <h6>Accomplishments</h6>
+                    <ul class="p-description">
+                        <li class="p-description">Accomplishment 1</li>
+                        <li class="p-description">Accomplishment 1</li>
+                    </ul>
+                </div>
+                <div class="h-event">
+                    <h5>
+                        <span class="p-name">Software Developer</span>
+                        <small class="p-duration">(2003 to 2005)</small>
+                    </h5>
+                    <h6>Accomplishments</h6>
+                    <ul class="p-description">
+                        <li class="p-description">Accomplishment 1</li>
+                        <li class="p-description">Accomplishment 1</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h4 class="h-card vcard">
+                    <span class="p-name fn">Learning Insights</span>
+                    <small class="p-region region">Chicago, IL</small>
+                    <small>(2004 - Present)</small>
+                </h4>
+                <div class="h-event">
+                    <h5>
+                        <span class="p-name">Developer/Data Center Operations/System & Network Administrator</span>
+                        <small class="p-duration">(1998 to 2003)</small>
+                    </h5>
+                    <h6>Accomplishments</h6>
+                    <ul class="p-description">
+                        <li class="p-description">Accomplishment 1</li>
+                        <li class="p-description">Accomplishment 1</li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <section>
             <h3 class="text-center">Technology Summary</h3>
-            <p>
-                <strong>
-                    Languages: C# <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>,
-                    JavaScript <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>,
-                    HTML5 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>,
-                    CSS <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>,
-                    PHP <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>,
-                    Java
-                </strong><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i> <br />
-                <strong>Frameworks:</strong>MVC, EntityFramework, AngularJS, Bootstrap, KnockoutJS,  <br />
-                <strong>Platforms:</strong> <br />
-                <strong>Databases:</strong> <br />
-                <strong>Software:</strong> <br />
-                <strong>Development Tools, Methodologies & Environments:</strong>
-            </p>
+            <div class="row">
+                <div class="col-md-1">
+                    <strong>Languages</strong>
+                </div>
+                <div class="col-lg-3 col-md-5 text-right">
+                    <ul class="list-unstyled">
+                        <li class="p-skill">C# <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">JavaScript <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">HTML5 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">CSS (SCSS/LESS) <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">PHP <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
+                        <li class="p-skill">Java <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <strong>Frameworks</strong>
+                </div>
+                <div class="col-lg-3 col-md-5 text-right">
+                    <ul class="list-unstyled">
+                        <li class="p-skill">MVC <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">AngularJS <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">KnockoutJS <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">Bootstrap <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <li class="p-skill">EntityFramework <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <strong>Platforms</strong>
+                </div>
+                <div class="col-lg-3 col-md-5 text-right">
+                    <ul class="list-unstyled">
+                        <li class="p-skill">SharePoint <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <strong>Databases</strong>
+                </div>
+                <div class="col-lg-3 col-md-5 text-right">
+                    <ul class="list-unstyled">
+                        <li class="p-skill">MS-SQL <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+                        <li class="p-skill">MySQL <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
     <script src="lib/jquery/dist/jquery.min.js"></script>

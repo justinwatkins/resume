@@ -1,5 +1,5 @@
-﻿$lightText:#444;
-$darkText:#222;
+﻿$lightText:#222;
+$darkText:#111;
 $backgroundColor:#757575;
 
 @mixin border-radius($radius) {
@@ -9,42 +9,78 @@ $backgroundColor:#757575;
                   border-radius: $radius;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Droid+Serif:400,700);
+
+.sansfont {
+    font-family: 'Open Sans', sans-serif;
+}
+.seriffont {
+    font-family: 'Droid Serif', serif;
+}
 .darktext {
     color:$darkText;
 }
 .lighttext {
     color:$lightText;
 }
+.basefontsize {
+    font-size: 15px;
+}
+
+html {
+    @extend .basefontsize;
+}
 
 body {
     @extend .lighttext;
+    @extend .sansfont;
+    @extend .basefontsize;
     background-color: $backgroundColor;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
     font-weight: 400;
     padding-bottom: 40px;
     padding-top: 20px;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
+    font-weight:600;
     @extend .darktext;
+    @extend .sansfont;
+    small, .small {
+        @extend .lighttext;
+    }
+}
+h1 {
+    @extend .seriffont;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 1rem;
 }
 
 h2 {
-    @extend .darktext;
+    font-size: 1.6rem;
+    margin-top: 1rem;
 }
 
 h3 {
-    @extend .darktext;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
 }
 
 h4 {
-    @extend .darktext;
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
 }
 
 h5 {
-    @extend .darktext;
+    font-size: 1.1rem;
 }
+
+h6 {
+    
+    font-size: 1.0rem;
+}
+
+
 
 .container {
     background-color: #FFFFFF;
@@ -60,3 +96,24 @@ h5 {
     font-size:1.1em;
     font-weight: 700;
 }
+
+
+.h-card {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed #ccc;
+}
+
+.h-event {
+    .p-name {
+        font-weight:600;
+    }
+}
+
+.p-contact {
+    &.h-card {
+        border-bottom-style:solid;
+    }
+}
+
+.fa-star, .fa-star-o, .fa-star-half-o {color:#666;}
