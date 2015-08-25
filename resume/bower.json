@@ -5,6 +5,8 @@
     "bootstrap": "4.0.0-alpha",
     "font-awesome": "4.4.0",
     "hammer.js": "2.0.4",
-    "modernizr": "2.8.3"
+    "modernizr": "2.8.3",
+    "angular": "1.4.4",
+    "angular-ui-router": "0.2.15"
   }
 }

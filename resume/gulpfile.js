@@ -9,6 +9,7 @@ var project = require('./project.json'),
         concat = require('gulp-concat'),
         jshint = require('gulp-jshint'),
         uglify = require('gulp-uglify'),
+        minifyCss = require('gulp-minify-css'),
         rename = require('gulp-rename'),
         bower = require('gulp-bower'),
         rimraf = require("rimraf"),
@@ -18,32 +19,22 @@ var project = require('./project.json'),
 
 
 gulp.task("build", function () {
-    
     bower();
-    gulp.src(['src/TypeScript/Tastes.js', 'src/TypeScript/Food.js'])
-                .pipe(concat("combined.js"))
-                .pipe(jshint())
-                .pipe(uglify())
-                .pipe(rename({
-                    extname: '.min.js'
-                }))
-                .pipe(gulp.dest('wwwroot/lib'));
 });
 
-gulp.task('resume', function () {
-    gulp.src('src/resume.html').pipe(gulp.dest(project.webroot + '/'));
-});
 
 gulp.task('sass', function () {
     gulp.src('src/SCSS/resume.scss')
         .pipe(sass())
+        .pipe(minifyCss())
+        .pipe(rename({
+            extname: '.min.css'
+        }))
         .pipe(gulp.dest(project.webroot + '/css'));
 });
 
 gulp.task("watcher", function () {
-    gulp.watch("src/TypeScript/*.js", ['build']);
     gulp.watch("src/SCSS/*.scss", ['sass']);
-    gulp.watch("src/*.html", ['resume']);
 });
 
 gulp.task("cleanAll", function () {
