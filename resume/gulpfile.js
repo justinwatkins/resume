@@ -20,8 +20,16 @@ var project = require('./project.json'),
 
 gulp.task("build", function () {
     bower();
+
 });
 
+
+gulp.task("ts", function () {
+    gulp.src('src/TypeScript/*.js')
+    .pipe(concat('myapp.js'))
+    .pipe(jshint())
+    .pipe(gulp.dest(project.webroot + '/js'));
+});
 
 gulp.task('sass', function () {
     gulp.src('src/SCSS/resume.scss')
@@ -34,6 +42,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task("watcher", function () {
+    gulp.watch("src/TypeScript/*.ts", ['ts'])
     gulp.watch("src/SCSS/*.scss", ['sass']);
 });
 
