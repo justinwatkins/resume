@@ -27,7 +27,11 @@ gulp.task("build", function () {
 gulp.task("ts", function () {
     gulp.src('src/TypeScript/*.js')
     .pipe(concat('myapp.js'))
+    //.pipe(uglify())
     .pipe(jshint())
+    .pipe(rename({
+        extname: '.min.js'
+    }))
     .pipe(gulp.dest(project.webroot + '/js'));
 });
 
