@@ -1,8 +1,4 @@
-﻿/// <binding BeforeBuild='bower' ProjectOpened='watcher' />
-/*
-This file in the main entry point for defining Gulp tasks and using Gulp plugins.
-Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
-*/
+﻿
 var project = require('./project.json'),
         gulp = require('gulp'),
         clean = require('gulp-clean'),
@@ -12,27 +8,32 @@ var project = require('./project.json'),
         minifyCss = require('gulp-minify-css'),
         rename = require('gulp-rename'),
         bower = require('gulp-bower'),
-        rimraf = require("rimraf"),
         fs = require("fs"),
-        less = require("gulp-less"),
+        ts = require('gulp-typescript'),
+        webserver = require('gulp-webserver'),
         sass = require("gulp-sass");
 
 
-gulp.task("build", function () {
+gulp.task("bower", function () {
     bower();
 
 });
 
-
-gulp.task("ts", function () {
-    gulp.src('src/TypeScript/*.js')
+gulp.task('scripts', function() {
+    return gulp.src('src/TypeScript/**/*.ts')
+    .pipe(ts({
+		"module": "amd",
+		"sourceMap": false,
+		"watch": false,
+		"target": "ES5"
+	}))
     .pipe(concat('myapp.js'))
-    //.pipe(uglify())
-    .pipe(jshint())
+    .pipe(uglify())
     .pipe(rename({
-        extname: '.min.js'
-    }))
-    .pipe(gulp.dest(project.webroot + '/js'));
+       extname: '.min.js'
+     }))
+     .pipe(gulp.dest(project.webroot + '/js/'));
+
 });
 
 gulp.task('sass', function () {
@@ -45,12 +46,42 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(project.webroot + '/css'));
 });
 
-gulp.task("watcher", function () {
-    gulp.watch("src/TypeScript/*.ts", ['ts'])
+gulp.task("watch", function () {
+    gulp.watch("src/TypeScript/*.ts", ['scripts'])
     gulp.watch("src/SCSS/*.scss", ['sass']);
 });
 
-gulp.task("cleanAll", function () {
-    gulp.src('wwwroot/lib/*').pipe(clean());
-    gulp.src(project.webroot + '/css/*').pipe(clean());
+gulp.task('build', ['bower', 'scripts', 'sass']);
+
+ gulp.task('webserver', function() {
+  gulp.src('wwwroot')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: false,
+      open: 'index.html'
+    }));
 });
+
+/*
+gulp.task('scripts', function() {
+  var tsResult = gulp.src('*.ts')
+    .pipe(ts({
+        declarationFiles: true,
+        noExternalResolve: true,
+        noImplicitAny: true,
+        out: 'main.js'
+      }));
+ 
+  return merge([
+    tsResult.dts.pipe(gulp.dest('release/definitions')),
+    tsResult.js.pipe(gulp.dest('release/js'))
+    ]);
+});
+
+
+ 
+gulp.task('watch', function () {
+  gulp.watch('*.scss', ['sass']);
+  gulp.watch('*.ts', ['scripts']);
+});
+*/

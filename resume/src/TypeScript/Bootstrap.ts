@@ -1,4 +1,5 @@
 ﻿module com.justinwatkins {
+    import ng=angular;
     class Main {
         constructor() {
             var module: ng.IModule = angular.module('com.justin-watkins.home', ['ui.router']);
@@ -12,28 +13,28 @@
                     name: 'home',
                     url: '/',
                     templateUrl: 'templates/home.html',
-                    controller: HomeController,
+                    controller: <any>HomeController,
                     controllerAs: 'home'
                 })
                 .state({
                     name: 'resume',
                     url: '/resume',
                     templateUrl: 'templates/resume.html',
-                    controller: ResumeController,
+                    controller: <any>ResumeController,
                     controllerAs: 'resume'
                 })
                 .state({
                     name: 'nested',
                     url: '/nested',
                     templateUrl: 'templates/nested.html',
-                    controller: NestedController,
+                    controller: <any>NestedController,
                     controllerAs: 'nested'
                 })
                 .state({
                     name: 'nested.child',
                     url: '/child',
                     templateUrl: 'templates/nestedChild.html',
-                    controller: NestedChildController,
+                    controller: <any>NestedChildController,
                     controllerAs: 'child'
                 });
         }
