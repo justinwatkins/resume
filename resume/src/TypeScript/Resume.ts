@@ -74,9 +74,5 @@
             }
             return numberArray;
         }
-
-        doClick() {
-            alert('clicked me');
-        }
     }
 }

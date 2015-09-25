@@ -23,20 +23,6 @@
                     controller: <any>ResumeController,
                     controllerAs: 'resume'
                 })
-                .state({
-                    name: 'nested',
-                    url: '/nested',
-                    templateUrl: 'templates/nested.html',
-                    controller: <any>NestedController,
-                    controllerAs: 'nested'
-                })
-                .state({
-                    name: 'nested.child',
-                    url: '/child',
-                    templateUrl: 'templates/nestedChild.html',
-                    controller: <any>NestedChildController,
-                    controllerAs: 'child'
-                });
         }
         Run($rootScope: IRootStateService, $state: ng.ui.IStateService, $stateParams: ng.ui.IStateParamsService) {
             $rootScope.$state = $state;

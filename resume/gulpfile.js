@@ -13,10 +13,8 @@ var project = require('./project.json'),
         webserver = require('gulp-webserver'),
         sass = require("gulp-sass");
 
-
 gulp.task("bower", function () {
     bower();
-
 });
 
 gulp.task('scripts', function() {
@@ -33,7 +31,6 @@ gulp.task('scripts', function() {
        extname: '.min.js'
      }))
      .pipe(gulp.dest(project.webroot + '/js/'));
-
 });
 
 gulp.task('sass', function () {
@@ -61,27 +58,3 @@ gulp.task('build', ['bower', 'scripts', 'sass']);
       open: 'index.html'
     }));
 });
-
-/*
-gulp.task('scripts', function() {
-  var tsResult = gulp.src('*.ts')
-    .pipe(ts({
-        declarationFiles: true,
-        noExternalResolve: true,
-        noImplicitAny: true,
-        out: 'main.js'
-      }));
- 
-  return merge([
-    tsResult.dts.pipe(gulp.dest('release/definitions')),
-    tsResult.js.pipe(gulp.dest('release/js'))
-    ]);
-});
-
-
- 
-gulp.task('watch', function () {
-  gulp.watch('*.scss', ['sass']);
-  gulp.watch('*.ts', ['scripts']);
-});
-*/
